@@ -7,4 +7,3 @@ app  = FastAPI()
 def read_all_measures():
     return None
 
-
