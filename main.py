@@ -1,9 +1,9 @@
 from fastapi import FastAPI
+from database import get_data
 
-app  = FastAPI()
+app = FastAPI()
 
-
-@app.get("/")
-def read_all_measures():
-    return None
-
+@app.get('/mesures')
+def get_mesures():
+    data = get_data()
+    return data
