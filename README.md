@@ -43,6 +43,8 @@ Ensuite on créé l'admin
 
 > :warning: il faut que le mot de passe entré pour le superuser soit le même que celui indiqué dans le fichier `.env`
 
+> :warning: dans `docker-compose.yml` changer `hypriot/rapi-mysql` par `ubuntu/mysql` si le système hôte est différent d'un raspberry pi
+
 ## utilisation
 
 Si tout a bien été configuré, on devrait avoir une api qui peut interragir avec une base de donnée sur notre réseau local. 
