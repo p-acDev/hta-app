@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  db:
+    image: hypriot/rpi-mysql
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    env_file:
+      - .env
+  backend:
+    build: backend-django/.
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+
+volumes:
+  mysql-volume:
