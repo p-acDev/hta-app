@@ -56,9 +56,10 @@ tapez: `http://IP_LOCAL/api/mesure` dans un navigateur pour visualiser les mesur
 ou loggez vous en tant qu'admin via: `http://IP_LOCAL_PI/admin` pour ajouter des valeurs. 
 
 > IP_LOCAL du type: 192.168.XX.XX si l'app tourne sur un raspberry pi
+> 
 > IP_LOCAL: 127.0.0.1 si l'app tourne sur votre machine
 
 ## Amélioration
 
-L'API tourne sur un réseau local. On peut imaginer que si nous faisons une mesure et que nous sommes en dehors de notre réseau local, on sauvegarde cette mesure dans un doc sur Google Drive par exemple et qu'avec une tâche récurrente avec Apache Airflow par exemple, l'api du réseau local vienne récupérer les nous veaux fichiers. 
+L'API tourne sur un réseau local. On peut imaginer que si nous faisons une mesure et que nous sommes en dehors de notre réseau local, on sauvegarde cette mesure dans un doc sur Google Drive par exemple et qu'avec une tâche récurrente avec Apache Airflow par exemple, l'api du réseau local vienne récupérer les nouveaux fichiers. 
 
