@@ -74,4 +74,4 @@ ou loggez vous en tant qu'admin via: `http://IP_LOCAL/admin` pour ajouter des va
 
 - L'API tourne sur un réseau local. On peut imaginer que si nous faisons une mesure et que nous sommes en dehors de notre réseau local, on sauvegarde cette mesure dans un doc sur Google Drive 📁 par exemple et qu'avec une tâche récurrente avec Apache Airflow par exemple, l'api du réseau local vienne récupérer les nouveaux fichiers.
 - Ajouter la possibilité d'ajouter plusieurs mesures d'un coup
-
+- Ajouter un containeur pour interface graphique
