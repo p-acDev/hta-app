@@ -14,7 +14,7 @@ L'api tourne en local chez moi sur un rapsberry pi. C'est la raison pour laquell
 ## Configuration 📝
 
 ### Step 1: créer un fichier .env avec les données d'environement
-> 🔒 `.env` à mettre dans le `.gitignore` pour garder ces data secrètes
+> 🔒 `.env` à mettre dans le `.gitignore` pour garder les infos secrètes
 
 ```
   #.env file
@@ -27,7 +27,7 @@ L'api tourne en local chez moi sur un rapsberry pi. C'est la raison pour laquell
   DJANGO_SECRET_KEY=secretKey
 ```
 
-### step 2: lancer le docker-compose
+### step 2: lancer le docker-compose 🐳
 
 `docker-compose up`
 
