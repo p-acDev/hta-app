@@ -2,17 +2,19 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/pacourbet/hta-api)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pacourbet/hta-api)
 
-# HTA-api
+# HTA-api ❤️‍🔥
 
-Ce projet est une api qui permet d'assurer un suivi de sa tension artérielle.
-Le backend est développé avec Django Rest Framework et une base de donnée MySQL.
+🙋‍♂️
+
+Ce projet est une api qui permet d'assurer un suivi de sa tension artérielle 📓.
+Le backend est développé avec Django 🐍 Rest Framework et une base de donnée MySQL.
 Le backend et la database sont lancés dans des containeurs Docker via le `docker-compose.yml`
 L'api tourne en local chez moi sur un rapsberry pi. C'est la raison pour laquelle je n'utilise pas une image classique pour le container `MySQL`
 
-## Configuration
+## Configuration 📝
 
 ### Step 1: créer un fichier .env avec les données d'environement
-> :warning: `.env` à mettre dans le `.gitignore` pour garder ces data secrètes
+> 🔒 `.env` à mettre dans le `.gitignore` pour garder ces data secrètes
 
 ```
   #.env file
@@ -33,6 +35,9 @@ Une fois que le container backend est lancé il faut l'executer en mode interact
 
 `docker container exec -it hta-app_backend_1 bash`
 
+> *Note*:
+> Obtenez le nom du containeur django avec `docker container ps`
+
 Une fois dans le containeur:
 
 `python manage.py migrate`
@@ -45,7 +50,13 @@ Ensuite on créé l'admin
 > - il faut que le mot de passe entré pour le superuser soit le même que celui indiqué dans le fichier `.env`
 > - dans `docker-compose.yml` changer `hypriot/rapi-mysql` par `ubuntu/mysql` si le système hôte est différent d'un raspberry pi
 
-## Utilisation
+Peut être qu'il faudra relancer le docker-compose une fois la migration effectuée pour que tout soit fonctionnel:
+
+`docker-compose down`
+
+`docker-compose up`
+
+## Utilisation 🚀
 
 Si tout a bien été configuré, on devrait avoir une api qui peut interragir avec une base de donnée sur notre réseau local. 
 Dans mon cas les containeurs tournent sur un raspberry pi, donc il suffit de repérer l'IP du raspberry pi. On peut ensuite s'y connecter via un navigateur ou avec des commandes comme `curl` comme on le ferait avec n'importe quelle API.
@@ -59,7 +70,7 @@ ou loggez vous en tant qu'admin via: `http://IP_LOCAL_PI/admin` pour ajouter des
 > 
 > IP_LOCAL: 127.0.0.1 si l'app tourne sur votre machine
 
-## Amélioration
+## Amélioration 💪
 
 L'API tourne sur un réseau local. On peut imaginer que si nous faisons une mesure et que nous sommes en dehors de notre réseau local, on sauvegarde cette mesure dans un doc sur Google Drive par exemple et qu'avec une tâche récurrente avec Apache Airflow par exemple, l'api du réseau local vienne récupérer les nouveaux fichiers. 
 
