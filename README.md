@@ -27,7 +27,7 @@ L'api tourne en local chez moi sur un rapsberry pi. C'est la raison pour laquell
   DJANGO_SECRET_KEY=secretKey
 ```
 
-### step 2: lancer le docker-compose 🐳
+### Step 2: lancer le docker-compose 🐳
 
 `docker-compose up`
 
