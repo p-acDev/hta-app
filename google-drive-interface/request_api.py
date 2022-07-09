@@ -8,7 +8,7 @@ def get_all_data():
     # get back the data via requests
     
     if os.environ.get("ENV_TYPE") == 'dev':
-        host = '192.168.1.21'
+        host = os.environ.get("RASP_HOST")
     elif os.environ.get("ENV_TYPE") == 'prod':
         host = 'backend' # i.e container
     
