@@ -129,3 +129,7 @@ dmypy.json
 .pyre/
 
 .DS_Store
+
+*client_secrets.json
+*data_report.html
+*report_data_plot.html
