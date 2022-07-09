@@ -131,5 +131,5 @@ dmypy.json
 .DS_Store
 
 *client_secrets.json
-*data_report.html
-*report_data_plot.html
+*report.html
+*boxplot.png
