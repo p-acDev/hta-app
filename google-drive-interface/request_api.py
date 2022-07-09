@@ -1,30 +1,18 @@
 import requests
-import pandas as pd
-import plotly.graph_objects as go
-from dateutil import parser
-import plotly.offline
-from pandas_profiling import ProfileReport
 import os
+from dotenv import load_dotenv
+# to get all env data from .env 
+load_dotenv()
 
-# get back the data via requests
-r = requests.get(f'http://backend:{os.environ.get("BACKEND_PORT")}/api/mesure')
-data = r.json()
-
-# transform into dataframe
-df = pd.DataFrame(data)
-df['datetime'] = df['date_mesure'].apply(lambda elem:parser.parse(elem))
-df = df.drop(columns='date_mesure')
-
-# do the plot
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=df['datetime'], y=df['systolic'],
-                         name='systolique',
-                         mode='markers'))
-fig.add_trace(go.Scatter(x=df['datetime'], y=df['diastolic'],
-                         name='systolique',
-                         mode='markers'))
-plotly.offline.plot(fig, filename='report_data_plot.html')
-
-# do the report stats
-profile = ProfileReport(df, title="Rapport de mesures TA")
-profile.to_file('data_report.html')
+def get_all_data():
+    # get back the data via requests
+    
+    if os.environ.get("ENV_TYPE") == 'dev':
+        host = '192.168.1.21'
+    elif os.environ.get("ENV_TYPE") == 'prod':
+        host = 'backend' # i.e container
+    
+    r = requests.get(f'http://{host}:{os.environ.get("BACKEND_PORT")}/api/mesure')
+    data = r.json()
+    
+    return data

@@ -2,7 +2,7 @@ from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 from dotenv import load_dotenv
 import os
-load_dotenv('../.env')
+load_dotenv()
 
 gauth = GoogleAuth()           
 drive = GoogleDrive(gauth)
