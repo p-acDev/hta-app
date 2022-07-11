@@ -10,7 +10,6 @@ class MesureAPIView(APIView):
 
     def get(self, *args, **kwargs):
         mesures = Mesure.objects.all()
+        #TODO: add load to google drive process
         serializer = MesureSerializer(mesures, many=True)
         return Response(serializer.data)
-
-
