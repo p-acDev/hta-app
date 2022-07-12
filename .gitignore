@@ -109,6 +109,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+venv-*
 
 # Spyder project settings
 .spyderproject
@@ -133,3 +134,4 @@ dmypy.json
 *client_secrets.json
 *report.html
 *boxplot.png
+
