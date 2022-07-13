@@ -12,7 +12,7 @@ services:
     env_file:
       - .env
   phpmyadmin:
-    # image compatbile pour raspberry pi
+    # image compatible pour raspberry pi
     #image: mt08/rpi-phpmyadmin
     image: phpmyadmin/phpmyadmin:latest
     ports:
