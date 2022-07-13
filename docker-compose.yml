@@ -2,8 +2,9 @@ version: '2.2'
 
 services:
   db:
-    image: hypriot/rpi-mysql
-    # image: ubuntu/mysql
+    # image compatible pour raspberry pi
+    #image: hypriot/rpi-mysql
+    image: ubuntu/mysql
     volumes:
       - mysql-volume:/var/lib/mysql
     ports:
@@ -11,6 +12,8 @@ services:
     env_file:
       - .env
   phpmyadmin:
+    # image compatbile pour raspberry pi
+    #image: mt08/rpi-phpmyadmin
     image: phpmyadmin/phpmyadmin:latest
     ports:
       - "8001:80"
