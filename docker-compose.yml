@@ -249,6 +249,10 @@ services:
       - "3306:3306"
     env_file:
       - .env
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - "8001:80"
   backend:
     build: backend-django/.
     env_file:
