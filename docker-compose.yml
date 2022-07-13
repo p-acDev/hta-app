@@ -1,4 +1,4 @@
-version: '3'
+version: '2.2'
 
 x-airflow-common:
   &airflow-common
@@ -77,7 +77,7 @@ services:
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
-        condition: service_completed_successfully
+        condition: service_healthy
 
   airflow-scheduler:
     <<: *airflow-common
@@ -91,7 +91,7 @@ services:
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
-        condition: service_completed_successfully
+        condition: service_healthy
 
   airflow-worker:
     <<: *airflow-common
@@ -112,7 +112,7 @@ services:
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
-        condition: service_completed_successfully
+        condition: service_healthy
 
   airflow-triggerer:
     <<: *airflow-common
@@ -126,7 +126,7 @@ services:
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
-        condition: service_completed_successfully
+        condition: service_healthy
 
   airflow-init:
     <<: *airflow-common
@@ -208,8 +208,6 @@ services:
 
   airflow-cli:
     <<: *airflow-common
-    profiles:
-      - debug
     environment:
       <<: *airflow-common-env
       CONNECTION_CHECK_MAX_COUNT: "0"
@@ -225,8 +223,6 @@ services:
   flower:
     <<: *airflow-common
     command: celery flower
-    profiles:
-      - flower
     ports:
       - 5555:5555
     healthcheck:
@@ -238,11 +234,11 @@ services:
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
-        condition: service_completed_successfully
+        condition: service_healthy
 
   db:
-    # image: hypriot/rpi-mysql # On raspberry pi
-    image: ubuntu/mysql
+    image: hypriot/rpi-mysql
+    # image: ubuntu/mysql
     volumes:
       - mysql-volume:/var/lib/mysql
     ports:

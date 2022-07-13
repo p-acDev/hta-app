@@ -1,7 +1,0 @@
-systolic diastolic
-134 78
-144 82
-148 75
-
-
-Date fichier: 2022-07-11 22:11:56.193462
