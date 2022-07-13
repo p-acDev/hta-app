@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MesuresConfig(AppConfig):
+class MesureConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'mesures'
+    name = 'mesure'

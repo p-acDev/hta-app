@@ -18,7 +18,7 @@ services:
     ports:
       - "8001:80"
   backend:
-    build: backend-django/.
+    build: htaApp/.
     env_file:
       - .env
     ports:
