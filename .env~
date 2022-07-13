@@ -1,7 +1,0 @@
-MYSQL_ROOT_PASSWORD=admin
-MYSQL_DATABASE=hta
-MYSQL_USER=pa
-MYSQL_PASSWORD=:m@teW?@92!
-MYSQL_HOST=db
-MYSQL_PORT=3306
-DJANGO_SECRET_KEY=django-insecure-9gcu$)7trs6-cf7b+c2x(8^*odz8esaeu$imhizw8hx!!=9au$
