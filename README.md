@@ -18,20 +18,27 @@ L'api tourne en local chez moi sur un rapsberry pi. C'est la raison pour laquell
 
 ```
   #.env file
-  MYSQL_ROOT_PASSWORD=password
+  # db env data used in django 
+  # database server data
+  MYSQL_ROOT_PASSWORD=mysql-server-root-pass
+
+  # DJANGO settings
+  # database
   MYSQL_DATABASE=databaseName
-  MYSQL_USER=userName
-  MYSQL_PASSWORD=otherPassword
-  MYSQL_HOST=dbName
-  MYSQL_PORT=portNumber
-  DJANGO_SECRET_KEY=secretKey
+  MYSQL_USER=other-user
+  MYSQL_PASSWORD=other-user-pass
+  MYSQL_HOST=db # from docker compose service
+  MYSQL_PORT=3306
+  # parameters
+  DJANGO_SECRET_KEY=secret-key
+
 ```
 
 ### Step 2: lancer le docker-compose 🐳
 
 `docker-compose up`
 
-Une fois que le container backend est lancé il faut l'executer en mode interactif pour y effectuer les migrations et créer l'utilisateur admin de l'application django
+#### Effectuer les migrations
 
 `docker container exec -it hta-app_backend_1 bash`
 
@@ -42,12 +49,15 @@ Une fois dans le containeur:
 
 `python manage.py migrate`
 
-Ensuite on créé l'admin
+`python manage.py makemigrations`
+
+option:
+
+création d'un admin django
 
 `python manage.py createsuperuser`
 
 > Notes:
-> - il faut que le mot de passe entré pour le superuser soit le même que celui indiqué dans le fichier `.env`
 > - dans `docker-compose.yml` changer `hypriot/rapi-mysql` par `ubuntu/mysql` si le système hôte est différent d'un raspberry pi
 
 Peut être qu'il faudra relancer le docker-compose une fois la migration effectuée pour que tout soit fonctionnel:
@@ -63,8 +73,8 @@ Dans mon cas les containeurs tournent sur un raspberry pi, donc il suffit de rep
 
 **Exemple**
 
-tapez: `http://IP_LOCAL:8000/api/mesure` dans un navigateur pour visualiser les mesures
-ou loggez vous en tant qu'admin via: `http://IP_LOCAL:8000/admin` pour ajouter des valeurs. 
+tapez: `http://IP_LOCAL:8000/api/mesures` dans un navigateur pour visualiser les mesures
+ou `http://IP_LOCAL:8000/api/add` pour en ajouter
 
 > 👉 IP_LOCAL du type: `192.168.XX.XX` si l'app tourne sur un raspberry pi
 > 
@@ -72,7 +82,6 @@ ou loggez vous en tant qu'admin via: `http://IP_LOCAL:8000/admin` pour ajouter d
 
 ## Amélioration 💪
 
-- [ ] L'API tourne sur un réseau local. On peut imaginer que si nous faisons une mesure et que nous sommes en dehors de notre réseau local, on sauvegarde cette mesure dans un doc sur Google Drive 📁
 - [x] Brancher 🔌 un container Apache Airflow
 - [ ] Ajouter la possibilité d'ajouter plusieurs mesures d'un coup
 - [x] Brancher un containeur pour interface graphique (streamlit) (pas fonctionnel sur raspberry pi pour l'instant)
