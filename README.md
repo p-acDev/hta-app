@@ -63,8 +63,8 @@ Dans mon cas les containeurs tournent sur un raspberry pi, donc il suffit de rep
 
 **Exemple**
 
-tapez: `http://IP_LOCAL/api/mesure` dans un navigateur pour visualiser les mesures
-ou loggez vous en tant qu'admin via: `http://IP_LOCAL/admin` pour ajouter des valeurs. 
+tapez: `http://IP_LOCAL:8000/api/mesure` dans un navigateur pour visualiser les mesures
+ou loggez vous en tant qu'admin via: `http://IP_LOCAL:8000/admin` pour ajouter des valeurs. 
 
 > 👉 IP_LOCAL du type: `192.168.XX.XX` si l'app tourne sur un raspberry pi
 > 
