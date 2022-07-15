@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('RASPBERRY_IP')]
+ALLOWED_HOSTS = [os.environ.get('SERVER_IP')]
 
 
 # Application definition

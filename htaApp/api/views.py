@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from mesure.models import Mesure
 from .serializer import MesureSerializer
 
+
 @api_view(['GET'])
 def get_data(request):
     mesures = Mesure.objects.all()
