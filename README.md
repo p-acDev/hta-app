@@ -1,6 +1,6 @@
-![Lines of code](https://img.shields.io/tokei/lines/github/pacourbet/hta-api?style=plastic)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/pacourbet/hta-api)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/pacourbet/hta-api)
+![Lines of code](https://img.shields.io/tokei/lines/github/pacourbet/hta-app?style=plastic)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/pacourbet/hta-app)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/pacourbet/hta-app)
 
 # HTA-app ❤️‍🔥
 
