@@ -17,20 +17,23 @@ L'api tourne en local chez moi sur un rapsberry pi. C'est la raison pour laquell
 > 🔒 `.env` à mettre dans le `.gitignore` pour garder les infos secrètes
 
 ```
-  #.env file
-  # db env data used in django 
-  # database server data
-  MYSQL_ROOT_PASSWORD=mysql-server-root-pass
+# db env data used in django 
+# database server data
+MYSQL_ROOT_PASSWORD=password_db_root
 
-  # DJANGO settings
-  # database
-  MYSQL_DATABASE=databaseName
-  MYSQL_USER=other-user
-  MYSQL_PASSWORD=other-user-pass
-  MYSQL_HOST=db # from docker compose service
-  MYSQL_PORT=3306
-  # parameters
-  DJANGO_SECRET_KEY=secret-key
+# DJANGO settings
+# database
+MYSQL_DATABASE=databaseName
+MYSQL_USER=username
+MYSQL_PASSWORD=userpass
+MYSQL_HOST=urlMysql
+MYSQL_PORT=portMysql
+# parameters
+DJANGO_SECRET_KEY=secret_key
+SERVER_IP=server_running_djangoApp
+
+# airflow env data
+AIRFLOW_UID=userId
 
 ```
 
