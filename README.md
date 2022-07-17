@@ -94,6 +94,7 @@ Si on a crée un superuser directement dans le containeur on peut accéder à la
 
 ## Amélioration 💪
 
-- [x] Brancher 🔌 un container Apache Airflow
+- [ ] Brancher 🔌 un container Apache Airflow
 - [ ] Ajouter la possibilité d'ajouter plusieurs mesures d'un coup
-- [x] Brancher un containeur pour interface graphique (streamlit) (pas fonctionnel sur raspberry pi pour l'instant)
+- [ ] Ajouter un swagger
+- [ ] Rendre l'ajout de mesure plus simple
