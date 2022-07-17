@@ -71,10 +71,22 @@ Peut être qu'il faudra relancer le docker-compose une fois la migration effectu
 Si tout a bien été configuré, on devrait avoir une api qui peut interragir avec une base de donnée sur notre réseau local. 
 Dans mon cas les containeurs tournent sur un raspberry pi, donc il suffit de repérer l'IP du raspberry pi. On peut ensuite s'y connecter via un navigateur ou avec des commandes comme `curl` comme on le ferait avec n'importe quelle API.
 
-**Exemple**
+
+### Accéder à l'api
 
 tapez: `http://IP_LOCAL:8000/api/mesures` dans un navigateur pour visualiser les mesures
 ou `http://IP_LOCAL:8000/api/add` pour en ajouter
+
+### Accéder à la database avec phpmyadmin
+
+avec l'url: `http://IP_LOCAL:8001`
+
+Le username root est `root` et le mot de passe est celui du fichier `.env` `MYSQL_ROOT_PASSWORD`
+On peut aussi s'y connecter avec les identifiant de l'autre user créé pour la database `MYSQL_DATABASE` `MYSQL_USER`
+
+### Accéder à la database avec la page admin de django
+
+Si on a crée un superuser directement dans le containeur on peut accéder à la database via l'url: `http://IP_LOCAL:8000/admin`
 
 > 👉 IP_LOCAL du type: `192.168.XX.XX` si l'app tourne sur un raspberry pi
 > 
