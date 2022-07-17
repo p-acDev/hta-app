@@ -54,11 +54,8 @@ Une fois dans le containeur:
 
 `python manage.py makemigrations`
 
-option:
-
-création d'un admin django
-
-`python manage.py createsuperuser`
+>option:
+> `python manage.py createsuperuser`
 
 > Notes:
 > - dans `docker-compose.yml` changer `hypriot/rapi-mysql` par `ubuntu/mysql` si le système hôte est différent d'un raspberry pi
