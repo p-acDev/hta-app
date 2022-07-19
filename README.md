@@ -96,3 +96,11 @@ Si on a crée un superuser directement dans le containeur on peut accéder à la
 - [ ] Ajouter la possibilité d'ajouter plusieurs mesures d'un coup
 - [ ] Ajouter un swagger
 - [ ] Rendre l'ajout de mesure plus simple
+
+## Annexes
+
+### Architecture
+
+![image](https://user-images.githubusercontent.com/44846069/179695160-2f6a47e4-0380-4583-83bd-5b204a47db9a.png)
+
+
