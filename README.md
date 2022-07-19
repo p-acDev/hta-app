@@ -54,11 +54,9 @@ Une fois dans le containeur:
 
 `python manage.py makemigrations`
 
->option:
-> `python manage.py createsuperuser`
-
 > Notes:
 > - dans `docker-compose.yml` changer `hypriot/rapi-mysql` par `ubuntu/mysql` si le système hôte est différent d'un raspberry pi
+> - `python manage.py createsuperuser` pour créer un super user et accéder à la base de données via l'interface admin de Django
 
 Peut être qu'il faudra relancer le docker-compose une fois la migration effectuée pour que tout soit fonctionnel:
 
